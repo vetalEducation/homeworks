@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Spider implements Animal {
 
-    public String getSpider() {
+    public String getAnimal() {
         return "Spider";
     }
 

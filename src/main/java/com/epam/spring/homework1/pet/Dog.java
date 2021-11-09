@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Order(Ordered.HIGHEST_PRECEDENCE)
 public class Dog implements Animal {
 
-    public String getDog() {
+    public String getAnimal() {
         return "Dog";
     }
 

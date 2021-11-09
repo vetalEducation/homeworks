@@ -1,10 +1,8 @@
 package com.epam.spring.homework1.config;
 
 import com.epam.spring.homework1.pet.*;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @ComponentScan("com.epam.spring.homework1.pet")
@@ -24,6 +22,18 @@ public class PetConfig {
 
     @Bean
     public Animal cheetah() {
+        return new Cheetah();
+    }
+
+    @Bean
+    @Primary
+    public Animal cheetah1() {
+        return new Cheetah();
+    }
+
+    @Bean
+    @Qualifier("cheetah2")
+    public Animal cheetah2() {
         return new Cheetah();
     }
 

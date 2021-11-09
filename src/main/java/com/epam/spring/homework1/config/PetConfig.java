@@ -5,46 +5,21 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.*;
 
 @Configuration
-@ComponentScan("com.epam.spring.homework1.pet")
-@ComponentScan(includeFilters = @ComponentScan.Filter(
+@ComponentScan(basePackages = {"com.epam.spring.homework1.pet"},
+        excludeFilters = @ComponentScan.Filter(
         type = FilterType.ASSIGNABLE_TYPE, value = Spider.class))
 public class PetConfig {
 
     @Bean
-    public Pet pet() {
-        return new Pet();
-    }
-
-    @Bean
-    public Animal dog() {
-        return new Dog();
-    }
-
-    @Bean
-    public Animal cat() {
-        return new Cat();
-    }
-
-    @Bean
-    public Animal cheetah() {
-        return new Cheetah();
-    }
-
-    @Bean
     @Primary
-    public Animal cheetah1() {
+    public Animal cheetahPrimary() {
         return new Cheetah();
     }
 
     @Bean
-    @Qualifier("cheetah2")
-    public Animal cheetah2() {
+    @Qualifier("cheetahQualifier")
+    public Animal cheetahQualifier() {
         return new Cheetah();
-    }
-
-    @Bean
-    public Animal spider() {
-        return new Spider();
     }
 
 }

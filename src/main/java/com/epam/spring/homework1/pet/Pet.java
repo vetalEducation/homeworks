@@ -11,7 +11,6 @@ public class Pet {
     @Autowired
     private List<Animal> pets;
 
-    @Autowired
     public void printPets() {
         pets.forEach(System.out::println);
     }

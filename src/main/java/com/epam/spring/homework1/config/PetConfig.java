@@ -11,6 +11,11 @@ import org.springframework.context.annotation.*;
 public class PetConfig {
 
     @Bean
+    public Pet pet() {
+        return new Pet();
+    }
+
+    @Bean
     public Animal dog() {
         return new Dog();
     }
